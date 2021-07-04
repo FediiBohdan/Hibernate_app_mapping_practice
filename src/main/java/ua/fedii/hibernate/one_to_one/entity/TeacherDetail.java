@@ -1,7 +1,6 @@
-package ua.fedii.hibernate.entity;
+package ua.fedii.hibernate.one_to_one.entity;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @Entity
 @Table(name = "teacher_detail", schema = "public", catalog = "school")
@@ -16,6 +15,10 @@ public class TeacherDetail {
 
     @Column(name = "hobby")
     private String hobby;
+
+    @OneToOne(mappedBy = "teacherDetail",
+            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    private Teacher teacher;
 
     public TeacherDetail() {}
 
@@ -51,6 +54,14 @@ public class TeacherDetail {
 
     public void setHobby(String hobby) {
         this.hobby = hobby;
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
     }
 
     @Override

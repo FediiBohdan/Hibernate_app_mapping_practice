@@ -1,4 +1,4 @@
-package ua.fedii.hibernate.entity;
+package ua.fedii.hibernate.one_to_one.entity;
 
 import javax.persistence.*;
 
