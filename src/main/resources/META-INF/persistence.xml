@@ -5,9 +5,8 @@
              version="2.2">
     <persistence-unit name="default">
 
-        <class>ua.fedii.hibernate.one_to_one.entity.Teacher</class>
-        <class>ua.fedii.hibernate.one_to_one.entity.TeacherDetail</class>
         <class>ua.fedii.hibernate.one_to_many.entity.Course</class>
+        <class>ua.fedii.hibernate.many_to_many.entity.Student</class>
         <properties>
             <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/school"/>
             <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
